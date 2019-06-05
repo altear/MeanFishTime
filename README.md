@@ -2,7 +2,8 @@
 Set your computer to one of the most accurate *bio-clocks* in the world
 
 ## Meet the Clock :wave:
-Meet Freddie, the living clock 
+<img src="docs/assets/freddie.gif" alt="drawing" width="200"/>
+<center> Figure 1: Freddie's got moves. </center>
 
 ## License :v:
 MIT - Fish time for everyone 
@@ -14,3 +15,4 @@ MIT - Fish time for everyone
 
 ## Special Thanks
 :point_right: John Lewis, uOttawa 
+
