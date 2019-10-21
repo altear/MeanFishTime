@@ -120,7 +120,7 @@ body {
     font-weight: 100;
 }
 
-.row {
+.row, .row-fluid {
     color: white;
 }
 
@@ -128,8 +128,12 @@ body {
     min-width: 200px !important;
     margin: 20px;
     background-color: rgba(255,255,255,0.1) !important;
-    border-radius: 20px !important;
+    
+}
+
+.card.primary-author {
     padding: 10px !important;
+    border-radius: 20px !important;
 }
 
 @media (max-width: 1000px){
