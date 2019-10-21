@@ -1,4 +1,7 @@
-
+import "jquery";
+import "popper.js"
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Chart from 'chart.js';
 import 'moment'
 import 'chartjs-plugin-streaming';
@@ -12,9 +15,7 @@ function init(){
         console.log("Received data:", JSON.parse(data))
         new_data.push(JSON.parse(data))
     })
-
     socket.on('tick', update_ticks);
-
     var ctx = document.getElementById('myChart');
 
     let disable_lines = {

@@ -4,19 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@primer/octicons": "^9.2.0",
+    "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "chartjs-plugin-streaming": "^1.8.0",
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "moment": "^2.24.0",
+    "popper.js": "^1.16.0",
     "socket.io": "^2.3.0",
     "webpack": "^4.41.2"
   },
   "devDependencies": {
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0",
     "webpack-cli": "^3.3.9"
   }
 }
