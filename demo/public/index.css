@@ -75,7 +75,7 @@ body {
 .split-screen > *:first-child {
     /* background-color: rgba(255,0,0,0.2); */
     /* max-width: 60vw; */
-    max-width: 60vw;
+    max-width: 50vw;
     padding: 20px;
 }
 
@@ -141,7 +141,7 @@ body {
         max-width: 90vw;
         max-height: 50vh;
         height: 50%;
-        width: 80%;
+        width: 90%;
     }   
 
     .about-container {
