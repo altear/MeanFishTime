@@ -9,6 +9,7 @@ function init(){
 
     let new_data = []
     socket.on('data', function(data){
+        console.log("Received data:", JSON.parse(data))
         new_data.push(JSON.parse(data))
     })
 
