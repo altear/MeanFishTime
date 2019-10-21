@@ -9,7 +9,7 @@ function init(){
 
     let new_data = []
     socket.on('data', function(data){
-        new_data.push({x: Date.now(), y:data})
+        new_data.push(JSON.parse(data))
     })
 
     socket.on('tick', update_ticks);
@@ -31,7 +31,7 @@ function init(){
         hover: {
             animationDuration: 0 // duration of animations when hovering an item
         },
-        responsiveAnimationDuration: 0 // animation duration after a resize
+            responsiveAnimationDuration: 0 // animation duration after a resize
         }
     
     var chart = new Chart(ctx, {
@@ -39,8 +39,10 @@ function init(){
         data: {
             datasets: [
                 {
+                    label: "Live Signal",
                     pointBackgroundColor: "orange",
                     pointBorderColor: "orange",
+                    pointRadius: 2,
                     fill: false,
                     data: []
                 }
@@ -49,20 +51,30 @@ function init(){
         options: {
             ...disable_lines,
             ...disable_animations,
-          scales: {
-            xAxes: [{
-              type: 'realtime',
-              realtime: {
-                delay: 10,
-                onRefresh: function(chart) {
-                    new_data.forEach((value)=>{
-                        chart.data.datasets[0].data.push(value)
-                    })
-                    new_data = []
-                }
-              }
-            }]
-          }
+            scales: {
+                yAxes: [{
+                    // scaleLabel:{
+                    //     labelString: "mV",
+                    //     display: true
+                    // }
+                }],
+                xAxes: [{
+                    type: 'realtime',
+                    // scaleLabel: {
+                    //     labelString: "Time",
+                    //     display: true,
+                    // },
+                    realtime: {
+                    delay: 10,
+                    onRefresh: function(chart) {
+                        new_data.forEach((value)=>{
+                            chart.data.datasets[0].data.push(value)
+                        })
+                        new_data = []
+                    }
+                    }
+                }]
+            }
         }
       });
 }

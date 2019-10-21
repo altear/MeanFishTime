@@ -27,8 +27,7 @@ var net = require('net');
 // TODO: consider creating batches of data, client can then create a queue of updates after each batch loads
 var data_server = net.createServer(function(socket) {
 	socket.on('data', (data)=>{
-        // console.log("received", data.toString())
-        io.emit('data', data.toString())
+        io.emit('data', JSON.stringify({y: data.toString(), x: Date.now()}))
     })
 });
 data_server.listen(12345, '127.0.0.1');
