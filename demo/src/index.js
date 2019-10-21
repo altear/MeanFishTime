@@ -31,8 +31,8 @@ function init(){
         hover: {
             animationDuration: 0 // duration of animations when hovering an item
         },
-            responsiveAnimationDuration: 0 // animation duration after a resize
-        }
+        responsiveAnimationDuration: 0 // animation duration after a resize
+    }
     
     var chart = new Chart(ctx, {
         type: 'line',
@@ -57,6 +57,10 @@ function init(){
                     //     labelString: "mV",
                     //     display: true
                     // }
+                    ticks: {
+                        suggestedMin: -1,
+                        suggestedMax: 1.5
+                    }
                 }],
                 xAxes: [{
                     type: 'realtime',
