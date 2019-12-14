@@ -128,10 +128,10 @@ body {
     min-width: 200px !important;
     margin: 20px;
     background-color: rgba(255,255,255,0.1) !important;
-    
 }
 
 .card.primary-author {
+    max-width: 400px;
     padding: 10px !important;
     border-radius: 20px !important;
 }
