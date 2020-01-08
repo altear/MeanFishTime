@@ -13,7 +13,8 @@ function init(){
     let new_data = []
     socket.on('data', function(data){
         console.log("Received data:", JSON.parse(data))
-        new_data.push(JSON.parse(data))
+        new_data = new_data.concat(JSON.parse(data))
+        console.log(new_data)
     })
     socket.on('tick', update_ticks);
     var ctx = document.getElementById('myChart');
@@ -60,8 +61,8 @@ function init(){
                     //     display: true
                     // }
                     ticks: {
-                        suggestedMin: -1,
-                        suggestedMax: 1.5
+                        suggestedMin: -0.2,
+                        suggestedMax: 0.2
                     }
                 }],
                 xAxes: [{
